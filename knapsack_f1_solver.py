@@ -1,6 +1,7 @@
 import knapsack
 import pandas as pd
 
+
 # read data
 df = pd.read_csv("data.csv")
 df.columns = ['name', 'price', 'score']
@@ -9,7 +10,9 @@ df.set_index("name", inplace=True)
 budget = 100
 team_size = 5
 
-# merge constraints
+
+# Merging constraints. For this variation of the knapsack problem there exists two constraints: team size and budget.
+# Here we merge them by adding a large constant.
 constant = 1000000
 df.price = df.price + constant
 df.score = df.score + constant
