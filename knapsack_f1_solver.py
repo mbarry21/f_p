@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # read data
-df = pd.read_csv("data.csv")
+df = pd.read_csv("data.csv", header=None)
 df.columns = ['name', 'price', 'score']
 df.set_index("name", inplace=True)
 
@@ -35,5 +35,5 @@ best_price = round(sub_df.price.sum(), 2)
 msg = "Best team for a budget of " + str(budget)
 msg = msg + " million dollars consists of " + str(team_members)
 msg = msg + " with a price of " + str(best_price)
-msg = msg + " million dollars and a combined score of " + str(score)
+msg = msg + " million dollars and a combined score of " + str(score) + " points"
 print(msg)
