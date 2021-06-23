@@ -16,7 +16,7 @@ team_size = 5
 constant = 1000000
 df.price = df.price + constant
 df.score = df.score + constant
-capacity = 100 + team_size * constant
+capacity = budget + team_size * constant
 
 # Solve the knapsack problem
 score, team_members_indexes = knapsack.knapsack(df.price, df.score).solve(capacity)
